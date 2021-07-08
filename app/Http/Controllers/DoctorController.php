@@ -75,8 +75,6 @@ class DoctorController extends Controller
 
                 $lastId = $datas->id;
 
-                $imgInfo = $imgInfo;
-
                 $imgName = $lastId.$imgInfo->getClientOriginalName();
 
                 $folderName = 'projectImage/doctors/';
@@ -86,7 +84,7 @@ class DoctorController extends Controller
                 $imgUrl = $folderName.$imgName;
 
                 // update image name
-                $medImg = User::find($lastId);
+                $medImg = Doctor::find($lastId);
 
                 $medImg->image = $imgUrl;
 

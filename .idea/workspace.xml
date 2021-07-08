@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53ba45f3-3b32-4f87-b946-5a089afcf8a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a5682855-e499-43b5-a802-1070197750c8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a5682855-e499-43b5-a802-1070197750c8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DoctorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DoctorController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +159,9 @@
       <workItem from="1625491739362" duration="3503000" />
       <workItem from="1625565354334" duration="5129000" />
       <workItem from="1625589789264" duration="723000" />
+      <workItem from="1625596888529" duration="696000" />
+      <workItem from="1625604086990" duration="13000" />
+      <workItem from="1625731247008" duration="1747000" />
     </task>
     <servers />
   </component>
