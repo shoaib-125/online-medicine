@@ -35,7 +35,7 @@
                         <img src="../../../../../public/Logo/pharmacy.png"/>
                     </a>
                 </div>
-               
+
                 <div class="col-lg-9">
                     <div class="main-navigation flex-lg-right">
                         <ul class="main-menu menu-right ">
