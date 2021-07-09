@@ -43,7 +43,7 @@
                                 <a href="{{route('main_home')}}">Home </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('main_home')}}">Find A Doctor </a>
+                                <a href="{{route('doctors')}}">Find A Doctor </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{route('main_home')}}">Find A Pharmacy </a>
@@ -76,7 +76,7 @@
                                 @endforeach
 
                             </ul>
-                        </div> 
+                        </div>
                     </nav>
                 </div>
                 <div class="col-lg-6">
