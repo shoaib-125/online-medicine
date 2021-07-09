@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53ba45f3-3b32-4f87-b946-5a089afcf8a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a5682855-e499-43b5-a802-1070197750c8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a5682855-e499-43b5-a802-1070197750c8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctors.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DoctorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DoctorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend/include/main_header_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend/include/main_header_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,11 +163,23 @@
       <workItem from="1625589789264" duration="723000" />
       <workItem from="1625596888529" duration="696000" />
       <workItem from="1625604086990" duration="13000" />
-      <workItem from="1625731247008" duration="1747000" />
+      <workItem from="1625731247008" duration="4086000" />
     </task>
+    <task id="LOCAL-00001" summary="image storage issue -- fixed">
+      <created>1625733615677</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1625733615677</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="image storage issue -- fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="image storage issue -- fixed" />
   </component>
 </project>

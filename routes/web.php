@@ -15,6 +15,8 @@ Auth::routes();
 
 Route::group(['namespace' => 'Frontend'], function(){
 	Route::get('/','HomeController@index')->name('main_home');
+	Route::get('/doctors','HomeController@doctors')->name('doctors');
+
 });
 
 Auth::routes(['register' => false]);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Category;
+use App\Doctor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Discount;
@@ -41,17 +42,24 @@ class HomeController extends Controller
 
         $products= Product::where('status','=',1)->get();
 
-        $categories= Category::Where('status',1)->get(); 
+        $categories= Category::Where('status',1)->get();
 
         return view('welcome1',compact('products','categories','discounts','settings'));
 
+    }
+
+    public function doctors()
+    {
+        $doctors = Doctor::all();
+
+        return view('doctors',compact('doctors'));
     }
 
     public function category_product($id){
 
         $products= Product::where('category_id',$id)->get();
 
-        $categories= Category::Where('status',1)->get(); 
+        $categories= Category::Where('status',1)->get();
 
         return view('frontend.category_product',compact('products','categories'));
 
@@ -61,7 +69,7 @@ class HomeController extends Controller
 
         $products= Product::where('group_id',$id)->get();
 
-        $categories= Category::Where('status',1)->get(); 
+        $categories= Category::Where('status',1)->get();
 
         return view('frontend.group_product',compact('products','categories'));
 
@@ -96,10 +104,10 @@ class HomeController extends Controller
             return redirect()->route('main_home');
 
         }
-        
+
         $cart_data= $this->get_cart_data($cart_items);
 
-        
+
         $settings = Settings::first();
 
         $delivery_charge = $settings == NULL ? $settings->delivery_charge ?? 0 : 0;
@@ -142,7 +150,7 @@ class HomeController extends Controller
         $delivery_charge = $settings == NULL ? 0 : $settings->delivery_charge ?? 0  ;
 
 
-        $cartData=$request->session()->get('cart_data');        
+        $cartData=$request->session()->get('cart_data');
 
         $request->validate([
             'firstname'     => 'required',
@@ -167,7 +175,7 @@ class HomeController extends Controller
 
 
     //SAVE NEW CUSTOMER
-    if(!$client){ 
+    if(!$client){
 
         $client = new Client;
 
@@ -187,7 +195,7 @@ class HomeController extends Controller
 
         $client->country = $request->country;
 
-        $client->save();        
+        $client->save();
     }
 
 
@@ -231,7 +239,7 @@ class HomeController extends Controller
             session()->flash('message','Order placed successfully');
 
             session()->flash('type','success');
-           
+
             Mail::to('sumona.uiu@gmail.com')->send(new OrderMail($datas));
 
             return redirect()->route('order_success',$datas->order_id);
@@ -244,7 +252,7 @@ class HomeController extends Controller
 
             return redirect()->route('order_failed');
 
-        } 
+        }
 
     }elseif($request->payment_method==1){
         // card payment method
@@ -291,7 +299,7 @@ class HomeController extends Controller
                 session()->flash('message','Order placed successfully');
 
                 session()->flash('type','success');
-               
+
                 Mail::to('sumona.uiu@gmail.com')->send(new OrderMail($datas));
 
                 return redirect()->route('order_success',$datas->order_id);
@@ -323,7 +331,7 @@ class HomeController extends Controller
                 'product_id' => $item['pid'],
                 'qty' => $item['quantity'],
                 'price' => $item['price'],
-                'total' => $item['quantity'] * $item['price'], 
+                'total' => $item['quantity'] * $item['price'],
                 'discount_type'   => 'fixed',
                 'discount' => 0,
                 'grand_total' => $item['quantity'] * $item['price']
@@ -345,7 +353,7 @@ class HomeController extends Controller
             }
 
         }
-    
+
         DB::table('order_products')->insert($dataArr);
     }
 
@@ -388,29 +396,29 @@ class HomeController extends Controller
         foreach($items as $item){
 
             $discountData = Discount::where('product_id', $item['pid'])->where('status', 1)->first();
-            
+
             if($discountData)
             {
 
                if($discountData->type=='percentage')
 
                {
-                    
+
                     $each_discount= (($item['price'] * $discountData->amount) /100 ) * $item['quantity'];
                }
                else
                {
-                    
+
                     $each_discount= ($discountData->amount * $item['quantity']);
-               } 
-               
+               }
+
                $discount+= $each_discount;
             }
 
-            
+
             $subtotal+= $item['price'] * $item['quantity'];
         }
-        
+
         $grandtotal= ($subtotal + $delivery_Charge) - $discount;
 
         $data['discount']= $discount;
@@ -428,7 +436,7 @@ class HomeController extends Controller
 
     public function search_product(Request $request)
     {
-        
+
         //FIND PRODUCTS WHOSE NAME MATCHES WITH USER SEARCH
         $productsMatchingNames = Product::with('generic')
                         ->where('status',1)
@@ -445,12 +453,12 @@ class HomeController extends Controller
 
 
         //MERGE BOTH ARRAYS
-        $products = $productsMatchingNames->merge($productsMatchingGeneric); 
+        $products = $productsMatchingNames->merge($productsMatchingGeneric);
 
-        $categories= Category::Where('status',1)->get();      
+        $categories= Category::Where('status',1)->get();
 
         return view('frontend.search_product',compact('products','categories'));
     }
 
-    
+
 }

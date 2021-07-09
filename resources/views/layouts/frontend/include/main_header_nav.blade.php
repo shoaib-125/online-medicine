@@ -25,6 +25,9 @@
                                 <a href="{{route('main_home')}}">Home </a>
                             </li>
                             <li class="menu-item">
+                                <a href="{{route('doctors')}}">Doctors </a>
+                            </li>
+                            <li class="menu-item">
                                 <a href="{{ route('about')}}">About Us</a>
                             </li>
                             <li class="menu-item">
@@ -36,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="header-bottom pb--10">
+<!--    <div class="header-bottom pb&#45;&#45;10">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3">
@@ -104,5 +107,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
