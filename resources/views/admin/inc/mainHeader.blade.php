@@ -4,7 +4,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Online Medical Store</b></span>
+        <span class="logo-lg"><b>E-Pharmacy</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -17,20 +17,10 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset(Auth::user()->image)}}" class="user-image" alt="User Image">
-                        <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                        Call to Action
                     </a>
                     <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header">
-                            <img src="{{asset(Auth::user()->image)}}" class="img-circle" alt="User Image">
-
-                            <p>
-                                {{ Auth::user()->name }}
-                            </p>
-                        </li>
-
-                        <!-- Menu Footer-->
+                       
                         <li class="user-footer">
                             <div class="pull-left">
                                 <a href="{{url('users/profile')}}" class="btn btn-default btn-flat">Profile</a>

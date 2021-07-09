@@ -136,16 +136,15 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="product-card">
                     <div class="product-grid-content">
-                        <div class="product-header">
-                            <a href="" class="author">
-                                {{$eachProduct->group->name}}
-                            </a>
-                            <h3><a href="{{route('p_details', $eachProduct->id)}}">{{$eachProduct->name}}</a></h3>
+                        <div class="product-header" style="background-color:#3E3E3E;">
+                          <span style="font-weight:bold; color:white;">Medicine Group : </span>  <span style="color:white;">
+                                {{$eachProduct->group->name}}</span>
+                            <span style="font-weight:bold;color:white; "> Medicine Name : <a href="{{route('p_details', $eachProduct->id)}}">{{$eachProduct->name}}</a></span>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="{{ asset($eachProduct->image) }}" alt="">
-                                <div class="hover-contents">
+                                <div class="hover-contents" style="background-color:#E5E5E5;">
                                     <a href="{{route('p_details', $eachProduct->id)}}" class="hover-image">
                                         <img src="{{ asset($eachProduct->image) }}" alt="">
                                     </a>
@@ -159,14 +158,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="price-block">
-                                <span class="price">£{{$eachProduct->sellingPrice}}</span>
-                                <del class="price-old">£{{$eachProduct->sellingPrice}}</del>
+                            <div class="price-block" style="background-color:#3E3E3E;">
+                                <span class="price">Rs{{$eachProduct->sellingPrice}}</span>
+                                <del class="price-old">Rs{{$eachProduct->sellingPrice}}</del>
                                 {{-- <span class="price-discount">20%</span> --}}
                             </div>
                         </div>
                     </div>
-                    <div class="product-list-content">
+                 <!--   <div class="product-list-content">
                         <div class="card-image">
                             <img src="image/products/product-3.jpg" alt="">
                         </div>
@@ -202,7 +201,7 @@
                                 <a href="" class="card-link"><i class="fas fa-random"></i> Add To Cart</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             @endforeach

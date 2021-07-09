@@ -103,11 +103,8 @@
                                         <div class="col-12 col-12 mb--20">
                                             <label>Country*</label>
                                             <select class="nice-select" name="country" >
-                                                <option>Bangladesh</option>
-                                                <option>China</option>
-                                                <option>country</option>
-                                                <option>India</option>
-                                                <option>Japan</option>
+                                                <option>Pakistan</option>
+                                                
                                             </select>
                                             @if($errors->has('country'))
                                             <span class="color-ff00">{{$errors->first('country')}}</span>
@@ -201,11 +198,7 @@
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Country*</label>
                                             <select class="nice-select">
-                                                <option>Bangladesh</option>
-                                                <option>China</option>
-                                                <option>country</option>
-                                                <option>India</option>
-                                                <option>Japan</option>
+                                                <option>Pakistan</option>
                                             </select>
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">

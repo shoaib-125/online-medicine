@@ -138,7 +138,7 @@
                     <div class="product-grid-content">
                         <div class="product-header">
                             <a href="" class="author">
-                                Epple
+                                
                             </a>
                             <h3><a href="{{route('p_details', $eachProduct->id)}}">{{$eachProduct->name}}</a></h3>
                         </div>
@@ -169,8 +169,8 @@
                                 </div>
                             </div>
                             <div class="price-block">
-                                <span class="price">£{{$eachProduct->sellingPrice}}</span>
-                                <del class="price-old">£{{$eachProduct->sellingPrice}}</del>
+                                <span class="price">Rs{{$eachProduct->sellingPrice}}</span>
+                                <del class="price-old">Rs{{$eachProduct->sellingPrice}}</del>
                                 {{-- <span class="price-discount">20%</span> --}}
                             </div>
                         </div>
@@ -182,20 +182,17 @@
                         <div class="product-card--body">
                             <div class="product-header">
                                 <a href="" class="author">
-                                    Gpple
+                                    
                                 </a>
-                                <h3><a href="product-details.html" tabindex="0">Qpple cPad with Retina Display
-                                        MD510LL/A</a></h3>
+                                <h3><a href="product-details.html" tabindex="0"></a></h3>
                             </div>
                             <article>
                                 <h2 class="sr-only">Card List Article</h2>
-                                <p>More room to move. With 80GB or 160GB of storage and up to 40 hours of
-                                    battery life, the new iPod classic lets you enjoy
-                                    up to 40,000 songs or..</p>
+                                <p></p>
                             </article>
                             <div class="price-block">
-                                <span class="price">£51.20</span>
-                                <del class="price-old">£51.20</del>
+                                <span class="price">Rs51.20</span>
+                                <del class="price-old">Rs51.20</del>
                                 <span class="price-discount">20%</span>
                             </div>
                             <div class="rating-block">

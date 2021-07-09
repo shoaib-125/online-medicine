@@ -3,7 +3,7 @@
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
     </div>
-
+Copyright © 2021 E-Pharmacy And Online Medicine Delivery. All Right Reserved.
   </footer>
 
   <!-- Control Sidebar -->

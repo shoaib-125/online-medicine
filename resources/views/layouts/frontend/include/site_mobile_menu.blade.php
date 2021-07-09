@@ -4,7 +4,7 @@
             <div class="row align-items-sm-end align-items-center">
                 <div class="col-md-4 col-7">
                     <a href="{{route('main_home')}}" class="site-brand">
-                        <h4>Online Medical Store</h4>
+                        <img src="../../../../../public/Logo/pharmacy.png"/>
                     </a>
                 </div>
                 <div class="col-md-5 order-3 order-md-2">
@@ -58,15 +58,21 @@
                 <!-- mobile menu navigation start -->
                 <nav class="off-canvas-nav">
                     <ul class="mobile-menu main-mobile-menu">
-                        <li class="menu-item">
-                            <a href="{{route('main_home')}}">Home </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ route('about')}}">About Us</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ route('contact')}}">Contact</a>
-                        </li>
+                          <li class="menu-item">
+                                <a href="{{route('main_home')}}">Home </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{route('main_home')}}">Find A Doctor </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{route('main_home')}}">Find A Pharmacy </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{route('main_home')}}">Diease Articles </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('contact')}}">Contact</a>
+                            </li>
                     </ul>
                 </nav>
                 <!-- mobile menu navigation end -->

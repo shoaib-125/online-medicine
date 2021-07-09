@@ -26,7 +26,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div id="google-map"></div>
+                <p>Contact us</p>
+                <div id="google-map">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d216173.1348498298!2d74.02452559071446!3d32.158252406808295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f2983d520eb29%3A0x6fb33af85e7a368!2sGujranwala%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2sae!4v1624196541735!5m2!1sen!2sae" width="100%" height="400" style="border:2px solid green; " allowfullscreen="" loading="lazy"></iframe> 
+                </div>
             </div>
         </div>
         <div class="row mt--60 ">
@@ -44,7 +47,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-info-text">
-                                <p><span>Address:</span> 1234 - Bandit Tringi lAliquam <br> Vitae. New York</p>
+                                <p><span>Address:</span> Gujranwala <br> Punjab, Pakistan</p>
                             </div>
                         </div>
                         <div class="address">
@@ -52,7 +55,7 @@
                                 <i class="far fa-envelope"></i>
                             </div>
                             <div class="contact-info-text">
-                                <p><span>Email: </span> support@example.com </p>
+                                <p><span>Email: </span> info@e-pharmacy.com </p>
                             </div>
                         </div>
                         <div class="address">
@@ -60,7 +63,7 @@
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
                             <div class="contact-info-text">
-                                <p><span>Phone:</span> (800) 0123 456 789 </p>
+                                <p><span>Phone:</span> +92 XXX XXXXXXX </p>
                             </div>
                         </div>
                     </div>
@@ -130,5 +133,5 @@
     </div>
 </main>
 <!-- Cart Page End -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>
+
 @endsection

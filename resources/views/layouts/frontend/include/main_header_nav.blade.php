@@ -1,34 +1,55 @@
+<style>
+    .main-menu li
+    {
+        position: relative;
+    }
+    .menu-item a:before
+    {
+       position: absolute;
+	content: '';
+	top: 100%;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	width: 100%;
+	height: auto;
+	background-color: #60941C;
+	z-index: -1;
+	transition: 0.4s;
+    }
+    .menu-item a:hover:before
+    {
+        	top: 70px;
+	transition: 0.3s;
+	color: #FFFFFF;
+    }
+</style>
+
+
 <div class="site-header d-none d-lg-block">
     <div class="header-middle pt--10 pb--10">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 ">
                     <a href="{{route('main_home')}}" class="site-brand">
-                        <h4>Online Medical Store</h4>
+                        <img src="../../../../../public/Logo/pharmacy.png"/>
                     </a>
                 </div>
-                <div class="col-lg-3">
-                    <div class="header-phone ">
-                        <div class="icon">
-                            <i class="fas fa-headphones-alt"></i>
-                        </div>
-                        <div class="text">
-                            <p>Free Support 24/7</p>
-                            <p class="font-weight-bold number">{{ isset($settings) ? $settings->phone ?? "" : "" }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
+               
+                <div class="col-lg-9">
                     <div class="main-navigation flex-lg-right">
                         <ul class="main-menu menu-right ">
                             <li class="menu-item">
                                 <a href="{{route('main_home')}}">Home </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('doctors')}}">Doctors </a>
+                                <a href="{{route('main_home')}}">Find A Doctor </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ route('about')}}">About Us</a>
+                                <a href="{{route('main_home')}}">Find A Pharmacy </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{route('main_home')}}">Diease Articles </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ route('contact')}}">Contact</a>
@@ -39,15 +60,14 @@
             </div>
         </div>
     </div>
-<!--    <div class="header-bottom pb&#45;&#45;10">
+    <div class="header-bottom pb--10">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3">
                     <nav class="category-nav">
-                        <div>
-                            <a href="javascript:void(0)" class="category-trigger"><i
-                                    class="fa fa-bars"></i>Browse
-                                categories</a>
+                      <div>
+                            <a href="javascript:void()" class="category-trigger"><i
+                                    class="fa fa-bars"></i>Medicines Category</a>
                             <ul class="category-menu">
                                 @foreach($categories as $each_category)
                                 <li class="cat-item">
@@ -56,10 +76,10 @@
                                 @endforeach
 
                             </ul>
-                        </div>
+                        </div> 
                     </nav>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-6">
                     <div class="header-search-block">
                         <form action="{{ route('search')}}" method="get">
 
@@ -68,7 +88,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="main-navigation flex-lg-right">
                         <div class="cart-widget">
                             <div class="cart-block">
@@ -107,5 +127,5 @@
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 </div>
