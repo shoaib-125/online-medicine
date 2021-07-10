@@ -180,6 +180,15 @@ Route::group(['middleware' => 'AuthMiddleware'], function(){
 		Route::get('/details/{id}', 'DoctorController@details');
 	});
 
+    Route::prefix('articles')->group(function(){
+        Route::get('/add', 'ArticleController@index');
+        Route::post('/add', 'ArticleController@save');
+        Route::post('/update', 'ArticleController@update');
+        Route::get('/list', 'ArticleController@manage');
+        Route::get('/edit/{id}', 'ArticleController@edit');
+        Route::get('/delete/{id}', 'ArticleController@delete');
+        Route::get('/details/{id}', 'ArticleController@details');
+    });
 
 
 	Route::prefix('order')->group(function(){

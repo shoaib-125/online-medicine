@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Doctor;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use App\User;
 use App\UsersRole;
 use App\PublishName;
 use DB;
 use Auth;
 
-class DoctorController extends Controller
+class ArticleController extends Controller
 {
     public function index(){
 
@@ -32,40 +33,28 @@ class DoctorController extends Controller
 
         $publish = PublishName::all();
 
-        return view('admin.Doctors.add',['roles' => $roles, 'publish' => $publish]);
+        return view('admin.Articles.add',['roles' => $roles, 'publish' => $publish]);
     }
 
     public function save(Request $request){
 
         $validatedData = $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'image' => 'required',
-            'email' => 'required|unique:users|email',
-            'phone' => 'required|min:11|digits_between: 11,13',
+            'name' => 'required',
+            'details' => 'required',
         ]);
 
-        $datas = new Doctor();
+        $datas = new Article();
 
-        $datas->first_name = $request->firstname;
+        $datas->name = $request->name;
+        $datas->details = $request->details;
+        $datas->save();
 
-        $datas->last_name = $request->lastname;
+        return redirect('/articles/add')->with('message','Inserted Successfully.');
+      //  $datas->image = 'image';
 
-        $datas->email = $request->email;
+       // $findVal = Doctor::where('email' , '=', $request->email)->first();
 
-        $datas->phone_no = $request->phone;
-
-        $datas->address = $request->address;
-
-        $datas->city = $request->city;
-
-        $datas->image = 'image';
-
-        $findVal = Doctor::where('email' , '=', $request->email)->first();
-
-        if(empty($findVal)) {
+        /*if(empty($findVal)) {
 
             $datas->save();
 
@@ -98,42 +87,34 @@ class DoctorController extends Controller
 
             return redirect('/doctors/add')->with('error','Already Exists.');
 
-        }
+        }*/
     }
 
     public function update(Request $request){
 
         $validatedData = $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            //'image' => 'required',
-            'email' => 'required|unique:users|email',
-            'phone' => 'required|min:11|digits_between: 11,13',
+            'name' => 'required',
+            'details' => 'required',
         ]);
 
-        $datas = Doctor::find($request->id);
+        $datas = Article::find($request->id);
 
-        $datas->first_name = $request->firstname;
+        $datas->name = $request->name;
+        $datas->details = $request->details;
 
-        $datas->last_name = $request->lastname;
-
-        $datas->phone_no = $request->phone;
-
-        $datas->address = $request->address;
-
-        $datas->city = $request->city;
-
-        $dataExists = Doctor::where('id', $request->id)->first();
+        $dataExists = Article::where('id', $request->id)->first();
 
         if(!empty($dataExists) && $request->id != $dataExists->id) {
 
-            return redirect('/doctors/edit/'.$request->id.'')->with('error',''.$request->first_name.' Has Already Been Taken.');
+            return redirect('/articles/edit/'.$request->id.'')->with('error',''.$request->first_name.' Has Already Been Taken.');
 
         }
 
-        if(!empty($datas)) {
+        $datas->save();
+        return redirect('/articles/list')->with('message','Updated Successfully.');
+
+
+       /* if(!empty($datas)) {
 
             $imgInfo = $request->file('image');
 
@@ -172,12 +153,12 @@ class DoctorController extends Controller
         } else{
 
             return redirect('/doctors/add')->with('error','Not Updated Successfully.');
-        }
+        }*/
     }
 
     public function delete($id){
 
-        $datas = Doctor::find($id);
+        $datas = Article::find($id);
 
         $datas->delete();
 
@@ -186,23 +167,23 @@ class DoctorController extends Controller
     }
 
     public function details($id){
-        $data = Doctor::where('id', $id)->first();
+        $data = Article::where('id', $id)->first();
 
-        return view('admin.Doctors.details',['data' => $data]);
+        return view('admin.Articles.details',['data' => $data]);
 
     }
 
     public function manage()
     {
-        $listData = DB::table('doctors')->paginate(10);
+        $listData = DB::table('articles')->paginate(10);
 
-        return view('admin.Doctors.manage',['listData' => $listData]);
+        return view('admin.Articles.manage',['listData' => $listData]);
 
     }
 
     public function edit($id){
 
-        $editData = Doctor::where('id', $id)->first();
+        $editData = Article::where('id', $id)->first();
 
         $publish = PublishName::all();
 
@@ -220,7 +201,7 @@ class DoctorController extends Controller
 
         }
 
-        return view('admin.Doctors.add',['editData' => $editData, 'roles' => $roles, 'publish' => $publish]);
+        return view('admin.Articles.add',['editData' => $editData, 'roles' => $roles, 'publish' => $publish]);
     }
 
     public function getUser($id){

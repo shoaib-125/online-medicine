@@ -10,7 +10,7 @@
 @endsection
 
 @section('pageTitle')
-    <a href="{{url('users/list')}}"><i class="fa fa-dashboard"></i>Doctor List</a>
+    <a href="{{url('doctors/list')}}"><i class="fa fa-dashboard"></i>Doctor List</a>
 @endsection
 
 
