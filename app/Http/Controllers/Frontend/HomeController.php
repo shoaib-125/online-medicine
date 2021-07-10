@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Article;
 use App\Category;
 use App\Doctor;
 use Illuminate\Http\Request;
@@ -53,6 +54,13 @@ class HomeController extends Controller
         $doctors = Doctor::all();
 
         return view('doctors',compact('doctors'));
+    }
+
+    public function articles()
+    {
+        $articles = Article::all();
+
+        return view('articles',compact('articles'));
     }
 
     public function category_product($id){

@@ -49,7 +49,7 @@
                                 <a href="{{route('main_home')}}">Find A Pharmacy </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('main_home')}}">Diease Articles </a>
+                                <a href="{{route('articles')}}">Diease Articles </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ route('contact')}}">Contact</a>
