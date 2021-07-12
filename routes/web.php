@@ -15,8 +15,6 @@ Auth::routes();
 
 Route::group(['namespace' => 'Frontend'], function(){
 	Route::get('/','HomeController@index')->name('main_home');
-	Route::get('/doctors','HomeController@doctors')->name('doctors');
-	Route::get('/articles','HomeController@articles')->name('articles');
 
 });
 
@@ -223,3 +221,5 @@ Route::group(['middleware' => 'client'], function(){
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/doctors','HomeController@doctors')->name('doctors');
+Route::get('/articles','HomeController@articles')->name('articles');
