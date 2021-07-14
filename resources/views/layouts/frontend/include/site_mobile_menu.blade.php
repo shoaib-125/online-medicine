@@ -15,9 +15,9 @@
                                 categories</a>
                             <ul class="category-menu">
                                 @foreach($categories as $each_category)
-                                <li class="cat-item">
-                                    <a href="{{route('category_product',$each_category->id)}}">{{$each_category->name}}</a>
-                                </li>
+                                    <li class="cat-item">
+                                        <a href="{{route('category_product',$each_category->id)}}">{{$each_category->name}}</a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>
@@ -58,21 +58,21 @@
                 <!-- mobile menu navigation start -->
                 <nav class="off-canvas-nav">
                     <ul class="mobile-menu main-mobile-menu">
-                          <li class="menu-item">
-                                <a href="{{route('main_home')}}">Home </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{route('main_home')}}">Find A Doctor </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{route('main_home')}}">Find A Pharmacy </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{route('main_home')}}">Diease Articles </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('contact')}}">Contact</a>
-                            </li>
+                        <li class="menu-item">
+                            <a href="{{route('main_home')}}">Home </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{route('list_doctors')}}">Find A Doctor </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{route('main_home')}}">Find A Pharmacy </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{route('list_articles')}}">Diease Articles </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{ route('contact')}}">Contact</a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- mobile menu navigation end -->
