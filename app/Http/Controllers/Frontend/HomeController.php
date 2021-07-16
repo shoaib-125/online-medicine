@@ -52,15 +52,15 @@ class HomeController extends Controller
     public function doctors()
     {
         $doctors = Doctor::all();
-
-        return view('frontend.doctors',compact('doctors'));
+        $categories= Category::Where('status',1)->get();
+        return view('frontend.doctors',compact('doctors','categories'));
     }
 
     public function articles()
     {
         $articles = Article::all();
-
-        return view('frontend.articles',compact('articles'));
+        $categories= Category::Where('status',1)->get();
+        return view('frontend.articles',compact('articles','categories'));
     }
 
     public function category_product($id){
