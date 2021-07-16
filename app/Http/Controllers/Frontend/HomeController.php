@@ -53,14 +53,14 @@ class HomeController extends Controller
     {
         $doctors = Doctor::all();
 
-        return view('doctors',compact('doctors'));
+        return view('frontend.doctors',compact('doctors'));
     }
 
     public function articles()
     {
         $articles = Article::all();
 
-        return view('articles',compact('articles'));
+        return view('frontend.articles',compact('articles'));
     }
 
     public function category_product($id){
