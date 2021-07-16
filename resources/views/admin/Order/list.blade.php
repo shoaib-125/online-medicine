@@ -2,7 +2,7 @@
 
 @section('title')
 	Order List
-@endsection	
+@endsection
 
 
 @section('sideMenuTitle')
@@ -19,7 +19,7 @@
                 {{Session::get('message')}}</h4>
      </div>
      @endif
-    
+
       @if ($errors->any())
 		    <div class="alert alert-danger alert-warning alert-dismissible">
 		      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -42,8 +42,9 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>ID</th>	
+                  <th>ID</th>
                   <th>Order No #</th>
+                    <th>Address</th>
                   <th>Payment Type</th>
                   <th>Payment Status</th>
                   <th>Grand Total({{ $settings ? $settings->currency_symbol ?? "Currency" : "Currency" }})</th>
@@ -54,7 +55,7 @@
                 <tbody>
                 	<?php $i = 1; ?>
                 	@foreach($orders as $val)
-                  <?php 
+                  <?php
                       $status = "";
                       if($val->status == 1){
                           $status = "Pending";
@@ -66,8 +67,9 @@
 
                   ?>
 	                <tr>
-	                 <td>{{ $i++ }}</td>	
+	                 <td>{{ $i++ }}</td>
                     <td>{{$val->order_number}}</td>
+                    <td>{{$val->customer->address}}</td>
                     <td>{{$val->payment->type ?? $val->payment_type }}</td>
                     <td>{{$status}}</td>
                     <td>{{$val->grandtotal}}</td>
@@ -92,7 +94,7 @@
                 @endforeach
 
                 </tbody>
-               
+
               </table>
 
               {{ $orders->links() }}
@@ -100,12 +102,12 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-         
+
           <!-- /.box -->
         </div>
         <!-- /.col -->
       </div>
 
-</section>		         
-	
-@endsection			
+</section>
+
+@endsection

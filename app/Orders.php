@@ -17,8 +17,11 @@ class Orders extends Model
 
     public function products()
     {
-        
         return $this->hasMany('App\Order_Product', 'order_id', 'order_id');
-        
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Client::class,'customer_id');
     }
 }
