@@ -63,6 +63,14 @@
         @else
         cart = [];
         @endif
+
+        @if(Session::has('message'))
+        $(document).ready(function (){
+            $('.notification-area').html('<p>{{ Session::get("message") }}</p>');
+            $('.notification-area').fadeIn('fast').delay(1000).fadeOut(1000);
+        });
+        @endif
+
     </script>
 
 </body>

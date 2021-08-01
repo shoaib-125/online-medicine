@@ -43,7 +43,7 @@
                                 </div>
                             @endif
                             <div class="row">
-                               
+
                                 <div class="col-md-12 col-12 mb--15">
                                     <label for="email">Email*</label>
                                     <input class="mb-0 form-control" type="text" name="email" id="email" placeholder="email" value="{{ old('email')}}">
@@ -59,9 +59,14 @@
                                     <span class="color-ff00">{{$errors->first('password')}}</span>
                                     @endif
                                 </div>
-                                <div class="col-md-12">
-                                    
+                                <div class="col-md-12" style="text-align: center">
                                     <button type="submit" class="btn btn-outlined">Login</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <p style="text-align: center;margin-top: 10px">OR</p>
+                                </div>
+                                <div class="col-md-12" style="text-align: center">
+                                    <a href="{{route('customer.signup')}}" class="btn btn-outlined">Register</a>
                                 </div>
                             </div>
                         </div>

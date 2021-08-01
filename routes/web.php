@@ -21,7 +21,7 @@ Route::group(['namespace' => 'Frontend'], function(){
 });
 
 
-Auth::routes(['register' => false]);
+//Auth::routes(['register' => false]);
 
 Route::get('/admin/login','Auth\LoginController@showLoginForm');
 Route::post('/admin/login','Auth\LoginController@login')->name('admin.login');
@@ -225,6 +225,7 @@ Route::group(['middleware' => 'client'], function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//Route::get('/login',[ 'as' => 'customer.signin','uses' => 'Frontend\LoginController@showLoginForm'])/*customer.signin*/;
-//Route::post('/login',['as' => 'customer.signin.submit','uses' => 'Frontend\LoginController@login'])/*->name('customer.signin.submit')*/;
+Route::get('/login',[ 'as' => 'customer.signin','uses' => 'Frontend\LoginController@showLoginForm'])/*customer.signin*/;
+Route::post('/login',['as' => 'customer.signin.submit','uses' => 'Frontend\LoginController@login'])/*->name('customer.signin.submit')*/;
+Route::get('/logout',['as' => 'customer.logout','uses' => 'Frontend\LoginController@logout'])/*->name('customer.signin.submit')*/;
 

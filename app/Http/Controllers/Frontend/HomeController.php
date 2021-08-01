@@ -133,6 +133,10 @@ class HomeController extends Controller
     }
 
     public function checkout(Request $request){
+        if (!Auth::check()){
+            Session::flash('message', 'Login to checkout');
+            return redirect()->route('customer.signin');
+        }
 
         $cart_items=$request->session()->get('cart_data');
 

@@ -26,8 +26,8 @@
                     <div class="row row-40">
                         <div class="col-12">
                             @guest
-                           
-                            
+
+
                             <div class="checkout-slidedown-box" id="quick-login">
                                 <form action="{{ route('customer.signin.submit')}}" method="POST">
                                     @csrf
@@ -104,7 +104,7 @@
                                             <label>Country*</label>
                                             <select class="nice-select" name="country" >
                                                 <option>Pakistan</option>
-                                                
+
                                             </select>
                                             @if($errors->has('country'))
                                             <span class="color-ff00">{{$errors->first('country')}}</span>
@@ -150,7 +150,7 @@
                                             <label>Zip Code*</label>
                                             <input type="text" placeholder="Zip Code">
                                         </div> --}}
-                                        
+
                                         {{-- <div class="col-12 mb--20 ">
                                             <div class="block-border check-bx-wrapper">
                                                 <div class="check-box">
@@ -163,7 +163,7 @@
                                                 </div>
                                             </div>
                                         </div> --}}
-                                        
+
                                     </div>
                                 </div>
                                 <!-- Shipping Address -->
@@ -239,20 +239,20 @@
                                                 @php $subtotal= $subtotal + ($each_product['price'] * $each_product['quantity']) @endphp
                                                 <li><span class="left">{{$each_product['pname'].' X '.$each_product['quantity']}} </span> <span
                                                         class="right">{{ isset($settings) ? $settings->currency_symbol ?? "Currency Not Set " : "Currency Not Set " }} {{ number_format($each_product['price'] * $each_product['quantity'],2)}}</span></li>
-                                                
+
                                                 @endforeach
                                             </ul>
                                             <p>Sub Total <span>{{ isset($settings) ? $settings->currency_symbol ?? "Currency Not Set " : "Currency Not Set " }} {{number_format($subtotal,2)}}</span></p>
                                             <p>Shipping Fee <span>{{ isset($settings) ? $settings->currency_symbol ?? "Currency Not Set " : "Currency Not Set " }} {{number_format($delivery_charge,2)}}</span></p>
                                             <h4>Grand Total <span>{{ isset($settings) ? $settings->currency_symbol ?? "Currency Not Set " : "Currency Not Set " }} {{ number_format(($cart_data['grandtotal'] + $delivery_charge),2)}}</span></h4>
-                                            @else 
+                                            @else
                                             <h4>Your cart is empty!</h4>
                                             @endif
                                             {{-- <div class="method-notice mt--25">
                                                 <article>
                                                     <h3 class="d-none sr-only">blog-article</h3>
                                                     Sorry, it seems that there are no available payment methods for
-                                                    your state. 
+                                                    your state.
                                                 </article>
 
 
@@ -266,17 +266,17 @@
                                                 @foreach($payment_methods as $each_method)
                                                 @php
                                                 $checked='';
-                                                if($loop->index==0){$checked='checked';}   
+                                                if($loop->index==0){$checked='checked';}
                                                 @endphp
                                                 <div class="custom-control custom-radio custom-control-inline">
                                                 <input type="radio" {{ $checked }} id="payment_{{$each_method->id}}" name="payment_method" data-payment="{{$each_method->id}}" value="{{$each_method->id}}" class="custom-control-input payment_btn">
                                                     <label class="custom-control-label form-control" for="payment_{{$each_method->id}}">{{$each_method->type}}</label>
                                                 </div>
-                                                @endforeach                                                  
+                                                @endforeach
 
                                             </div>
                                             <div class="stripe-payment-box">
-                                               
+
                                                     <div class="form-row">
                                                         <div class="col-md-12 col-12">
                                                             <label>Name on Card</label>
@@ -288,12 +288,12 @@
                                                       <div id="card-element">
                                                         <!-- A Stripe Element will be inserted here. -->
                                                       </div>
-                                                  
+
                                                       <!-- Used to display form errors. -->
                                                       <div id="card-errors" role="alert"></div>
-                                                    </div>                                                  
+                                                    </div>
                                            </div>
-                                            
+
 
                                         </p>
                                             <div class="term-block">

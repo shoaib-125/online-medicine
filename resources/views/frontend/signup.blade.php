@@ -91,9 +91,14 @@
                                     @endif
                                 </div>
 
-                                <div class="col-md-12">
-                                    
+                                <div class="col-md-12" style="text-align: center">
                                     <button type="submit" class="btn btn-outlined">Register</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <p style="text-align: center;margin-top: 10px">OR</p>
+                                </div>
+                                <div class="col-md-12" style="text-align: center">
+                                    <a href="{{route('customer.signin')}}" class="btn btn-outlined">Login</a>
                                 </div>
                             </div>
                         </div>

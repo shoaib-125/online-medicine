@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function showLoginForm(){
+        if (Auth::check()){
+            return redirect()->route('main_home');
+        }
 
         $categories= Category::Where('status',1)->get();
 
@@ -19,6 +22,9 @@ class LoginController extends Controller
     }
 
     public function showRegistrationForm(){
+        if (Auth::check()){
+            return redirect()->route('main_home');
+        }
 
         $categories= Category::Where('status',1)->get();
 
@@ -38,7 +44,7 @@ class LoginController extends Controller
 
         $user = new User;
 
-        $user->name         = $request->firstname.' '.$request->lastname;
+//        $user->name         = $request->firstname.' '.$request->lastname;
 
         $user->firstname    = $request->firstname;
 
@@ -55,7 +61,7 @@ class LoginController extends Controller
         $user->isAdmin      = 0;
 
         $user->status       = 1;
-        
+
         try{
 
             $user->save();
@@ -82,7 +88,7 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
-        
+
         $request->validate([
             'email'         => 'required|email',
             'password'      => 'required'
@@ -103,14 +109,19 @@ class LoginController extends Controller
                 return redirect('/my-account');
 
             }
-            
+
         }
 
         session()->flash('message','Invalid Credentials!');
 
         session()->flash('type','danger');
-        
+
         return redirect()->back();
 
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('main_home');
     }
 }

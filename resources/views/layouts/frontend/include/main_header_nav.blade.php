@@ -36,7 +36,7 @@
                     </a>
                 </div>
 
-                <div class="col-lg-9">
+                <div class="col-lg-7">
                     <div class="main-navigation flex-lg-right">
                         <ul class="main-menu menu-right ">
                             <li class="menu-item">
@@ -54,8 +54,19 @@
                             <li class="menu-item">
                                 <a href="{{ route('contact')}}">Contact</a>
                             </li>
+
                         </ul>
                     </div>
+                </div>
+                <div class="col-lg-2">
+                    <ul>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                            <a href="{{route('customer.logout')}}" class="btn btn-outlined" style="padding: 10px;">Logout</a>
+                        @else
+                            <a href="{{route('customer.signup')}}" class="btn btn-outlined" style="padding: 10px;">Register</a>
+                            <a href="{{route('customer.signin')}}" class="btn btn-outlined" style="padding: 10px;">Login</a>
+                        @endif
+                    </ul>
                 </div>
             </div>
         </div>
